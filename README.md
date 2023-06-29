@@ -50,3 +50,11 @@ It relies on the following packages:
 - numpy
 - matplotlib
 - PyQt5 (If you want to use GUI simulator)
+
+## To be added
+- [ ] Add more scheduling algorithms
+- [ ] Add more reward functions
+- [ ] Add more scenarios
+- [ ] (README) Adjustable parameters
+- [ ] (README) GUI simulator usage
+- [ ] (README) How to add new scheduling algorithms
