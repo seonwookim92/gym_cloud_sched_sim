@@ -57,6 +57,8 @@ def get_reward(env):
         rbd2 = 0
     else:
         print(f"last_cluster_state: {last_cluster_state}")
+        print(f"1: {last_cluster_state['nodes'][last_action][0]}")
+        print(f"2: {last_pod_state[0]}")
         _cpu = last_cluster_state['nodes'][last_action][0] - last_pod_state[0]
         _mem = last_cluster_state['nodes'][last_action][1] - last_pod_state[1]
         rbd2 = abs(_cpu - _mem)
