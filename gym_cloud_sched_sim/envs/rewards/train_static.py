@@ -26,8 +26,7 @@ def get_reward(env):
     is_scheduled = env.info['is_scheduled']
     last_cluster_state = env.last_cluster_state
     last_pod_state = last_cluster_state['pods'][1]
-    last_action = env.last_action
-    print(f"last_action: {type(last_action)}, {last_action}")
+    last_action = int(env.last_action)
     util = {}
     for node in env.cluster.nodes:
         cpu_ratio, mem_ratio = node.get_node_rsrc_ratio()
@@ -57,11 +56,6 @@ def get_reward(env):
     if last_action == 0:
         rbd2 = 0
     else:
-        print(f"last_cluster_state: {last_cluster_state}")
-        print(f"1: {last_cluster_state['nodes']}")
-        print(f"2: {last_cluster_state['nodes'][last_action]}")
-        print(f"3: {last_cluster_state['nodes'][last_action][0]}")
-        print(f"4: {last_pod_state[0]}")
         _cpu = last_cluster_state['nodes'][last_action][0] - last_pod_state[0]
         _mem = last_cluster_state['nodes'][last_action][1] - last_pod_state[1]
         rbd2 = abs(_cpu - _mem)
