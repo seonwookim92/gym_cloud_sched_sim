@@ -105,7 +105,7 @@ class CloudSchedSimEnv(gym.Env):
         else:
             len_scenario = len(self.stress_gen.scenario)
             len_scheduled = len(self.cluster.terminated_pods + self.cluster.running_pods)
-        print(f"len_scenario: {len_scenario}, len_scheduled: {len_scheduled}")
+        # print(f"len_scenario: {len_scenario}, len_scheduled: {len_scheduled}")
         
         if len_scenario == len_scheduled:
             self.done = True
