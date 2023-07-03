@@ -118,6 +118,9 @@ class CloudSchedSimEnv(gym.Env):
         # Update last cluster state
         self.update_last_cluster_state()
 
+        # Update last action
+        self.last_action = action
+
         # Update cluster
         self.cluster.update(self.time)
 
