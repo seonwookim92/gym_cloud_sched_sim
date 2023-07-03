@@ -27,7 +27,7 @@ def get_reward(env):
     last_cluster_state = env.last_cluster_state
     last_pod_state = last_cluster_state['pods'][1]
     last_action = env.last_action
-    print(f"last_action: {last_action}")
+    print(f"last_action: {type(last_action)}, {last_action}")
     util = {}
     for node in env.cluster.nodes:
         cpu_ratio, mem_ratio = node.get_node_rsrc_ratio()
