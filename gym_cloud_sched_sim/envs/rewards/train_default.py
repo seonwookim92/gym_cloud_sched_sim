@@ -6,6 +6,8 @@ def get_reward(env):
     # 1. Gives disadvantage when the pod is not scheduled.
     # 2. Gives advantage when the pod is scheduled to the node with less utilization than average.
 
+    is_scheduled = env.info['is_scheduled']
+
     util = {}
     for node in env.cluster.nodes:
         cpu_ratio, mem_ratio = node.get_node_rsrc_ratio()
