@@ -14,7 +14,7 @@ class SimStressGen:
 
     def load_scenario(self, scenario_file):
         # Load scenario
-        scenario_path = os.path.join('..', "scenarios/", scenario_file)
+        scenario_path = os.path.join(base_path, "scenarios/", scenario_file)
         scenario = []
         with open(scenario_path, "r") as f:
             lines = f.readlines()
